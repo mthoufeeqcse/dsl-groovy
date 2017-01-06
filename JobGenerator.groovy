@@ -9,7 +9,6 @@ job("Deploy") {
   }
  }
  steps{
-   shell("docker build -t docker-tomcat .")
-   shell("docker run -d -it -p 8383:8080 docker-tomcat")
- }
+   shell(readFileFromWorkspace('deploy.sh'))
+   }
 }
